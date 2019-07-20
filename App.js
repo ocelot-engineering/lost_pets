@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Main from './components/MainComponent';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View style={{flex:1}}>
+      {/*<Text>Open up App.js to start working on your app!</Text> */}
+      <Main />
     </View>
   );
 }
