@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, View, SafeAreaView } from 'react-native';
+import { FlatList, ScrollView } from 'react-native';
 import { ListItem } from 'react-native-elements';
 
 function LostList(props) {
@@ -19,15 +19,13 @@ function LostList(props) {
     };
 
     return(
-        <SafeAreaView>
-            <View>
-                <FlatList
-                    data={props.pets}
-                    renderItem={renderLostItem}
-                    keyExtractor={item => item.id.toString()}
-                    />
-            </View>
-        </SafeAreaView>
+        <ScrollView>
+            <FlatList
+                data={props.pets}
+                renderItem={renderLostItem}
+                keyExtractor={item => item.id.toString()}
+                />
+        </ScrollView>
     );
 }
 
