@@ -83,7 +83,7 @@ const TabNavigator = createBottomTabNavigator({
     }
 },
 {
-    initialRouteName: 'MyPet',
+    //initialRouteName: 'MyPet',
     tabBarOptions: {
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
