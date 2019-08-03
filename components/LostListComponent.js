@@ -41,6 +41,7 @@ function LostList(props) {
                         title: item.name[0],
                         source: item.image
                         }}
+                    onPress={() => props.navigation.navigate('LostPetProfile', { petId: item.id})}
                     />
             </Swipeable>
         )

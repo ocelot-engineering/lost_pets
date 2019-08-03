@@ -3,6 +3,7 @@ import { View, Platform } from 'react-native'
 import { Icon } from 'react-native-elements';
 import Lost from './LostComponent';
 import LostMap from './LostMapComponent';
+import LostPetProfile from './LostPetProfileComponent';
 import Bookmark from './BookmarkComponent';
 import MyPet from './MyPetComponent';
 import Settings from './SettingsComponent';
@@ -12,7 +13,8 @@ import { createStackNavigator, createBottomTabNavigator, createAppContainer, Saf
 
 const LostNavigator = createStackNavigator({
     LostList: Lost,
-    LostMap: LostMap
+    LostMap: LostMap,
+    LostPetProfile: LostPetProfile
 });
 
 const BookmarkNavigator = createStackNavigator({

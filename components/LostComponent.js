@@ -15,7 +15,7 @@ class Lost extends Component {
     render() {
         return(
             <View>
-                <LostList pets = {this.state.pets} />
+                <LostList pets = {this.state.pets} navigation = {this.props.navigation} />
                 <Button
                     title = 'Switch To Map'
                     raised
