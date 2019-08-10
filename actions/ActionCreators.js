@@ -1,4 +1,5 @@
 import * as ActionTypes from './ActionTypes';
+import { PETS } from '../shared/pets';
 
 // bookmark.js
 export const addBookmark = (petId) => ({
@@ -11,12 +12,12 @@ export const deleteBookmark = (petId) => ({
     payload: petId
 });
 
+export const fetchLostPets = (location_config = {area: 'MELBOURNE', radius: 25}) => {
+//export const fetchLostPets = (location_config = {area: 'MELBOURNE', radius: 25}) => (dispatch) => { // when we have thunk
 /*
-export const fetchBookmarks = () => (dispatch) => {
+    dispatch(getLostPetsLoading());
 
-    dispatch(dishesLoading());
-
-    return fetch(baseUrl + 'dishes')
+    return fetch(baseUrl + 'pets')
     .then(response => {
         if (response.ok) {
           return response;
@@ -31,7 +32,24 @@ export const fetchBookmarks = () => (dispatch) => {
             throw errmess;
       })
     .then(response => response.json())
-    .then(dishes => dispatch(addDishes(dishes)))
-    .catch(error => dispatch(dishesFailed(error.message)));
-};
+    .then(pets => dispatch(getLostPets(pets)))
+    .catch(error => dispatch(getLostPetsFailed(error.message)));
 */
+    //console.log(location_config);
+    return getLostPets(pets = PETS); // temp solution until we get a REST API
+};
+
+export const getLostPetsLoading = () => ({
+    type: ActionTypes.GET_LOST_PETS_LOADING
+});
+
+export const getLostPets = (pets) => ({
+    type: ActionTypes.GET_LOST_PETS,
+    payload: pets
+});
+
+export const getLostPetsFailed = () => ({
+    type: ActionTypes.GET_LOST_PETS,
+    payload: errMess
+});
+

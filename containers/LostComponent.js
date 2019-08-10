@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 import { View, Alert } from 'react-native';
 import { Button } from 'react-native-elements'
-import { PETS } from '../shared/pets';
-import LostList from './LostListComponent';
+import { connect } from 'react-redux';
+import LostList from '../components/LostListComponent';
+import { fetchLostPets } from '../actions/ActionCreators';
+
+const mapStateToProps = state => ({
+    pets: state.lostPets.pets
+})
+  
+const mapDispatchToProps = dispatch => ({
+    fetchLostPets: () => dispatch(fetchLostPets())
+})
 
 class Lost extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            pets: PETS
-        };
+
+    componentDidMount() {
+        this.props.fetchLostPets();
     }
 
     render() {
+
         return(
             <View>
-                <LostList pets = {this.state.pets} navigation = {this.props.navigation} />
+                <LostList pets = {this.props.pets} navigation = {this.props.navigation} />
                 <Button
                     title = 'Switch To Map'
                     raised
@@ -31,4 +39,4 @@ class Lost extends Component {
     }
 };
 
-export default Lost;
+export default connect(mapStateToProps, mapDispatchToProps)(Lost);

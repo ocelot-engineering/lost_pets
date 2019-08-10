@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { Avatar } from 'react-native-elements';
 
 class Settings extends Component {
     render() {
         return(
-            <SafeAreaView style={{flex: 1}}>
                 <View style = {styles.container}>
                     <Avatar
                         rounded
@@ -18,7 +17,6 @@ class Settings extends Component {
                     <Text style = {styles.text}>Settings Page</Text>
                     <Text>Under construction...</Text>
                 </View>
-            </SafeAreaView>
         )
     }
 };

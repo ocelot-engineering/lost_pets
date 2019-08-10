@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { View, Platform } from 'react-native'
 import { Icon } from 'react-native-elements';
 import Lost from './LostComponent';
-import LostMap from './LostMapComponent';
-import LostPetProfile from './LostPetProfileComponent';
-import Bookmark from './BookmarkComponent';
-import MyPet from './MyPetComponent';
-import Settings from './SettingsComponent';
+import LostMap from '../components/LostMapComponent';
+import LostPetProfile from '../components/LostPetProfileComponent';
+import Bookmark from '../components/BookmarkComponent';
+import MyPet from '../components/MyPetComponent';
+import Settings from '../components/SettingsComponent';
 import { createStackNavigator, createBottomTabNavigator, createAppContainer, SafeAreaView } from 'react-navigation';
 
 // Navigators ------------------------------------------
@@ -85,7 +85,7 @@ const TabNavigator = createBottomTabNavigator({
     }
 },
 {
-    //initialRouteName: 'MyPet',
+    initialRouteName: 'MyPet',
     tabBarOptions: {
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
@@ -97,6 +97,7 @@ const TabNavigator = createBottomTabNavigator({
 const AppContainer = createAppContainer(TabNavigator);
 
 class Main extends Component {
+
     render() {
         return(
             <View style={{flex:1}}>

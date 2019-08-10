@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, ScrollView, Alert } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Alert } from 'react-native';
 import { Card, Button, Icon } from 'react-native-elements'; 
 import { PETS } from '../shared/pets';
 
@@ -45,7 +45,7 @@ class LostPetProfile extends Component {
         //const pet = this.state.pets.filter((pet) => pet.id === petId)
 
         return(
-            <SafeAreaView style={{flex: 1}}>
+            <View style={{flex: 1}}>
                 <ScrollView>
                     <Card
                         title={this.state.pet.name}
@@ -108,7 +108,7 @@ class LostPetProfile extends Component {
                         </View>
                     </Card>
                 </ScrollView>
-            </SafeAreaView>
+            </View>
         )
     }
 };

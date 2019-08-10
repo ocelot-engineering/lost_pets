@@ -1,13 +1,15 @@
 import { createStore, combineReducers } from 'redux';
 import { bookmarks } from './reducers/bookmarks';
+import { lostPets } from './reducers/lostPets';
 
 export const configureStore = () => {
 
-    const rootReducer = combineReducers({
-        bookmarks
+    const reducers = combineReducers({
+        bookmarks,
+        lostPets
     });
 
-    const store = createStore(rootReducer); // apply middleware and persistor later
+    const store = createStore(reducers); // apply middleware and persistor later
 
     return( { store } );
 };

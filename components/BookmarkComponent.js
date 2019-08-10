@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { Avatar } from 'react-native-elements';
 
 class Bookmark extends Component {
     render() {
         return(
-            <SafeAreaView style={{flex: 1}}>
                 <View style = {styles.container}>
                     <Avatar
                         rounded
@@ -18,7 +17,6 @@ class Bookmark extends Component {
                     <Text style = {styles.text}>Bookmark Page</Text>
                     <Text>Under construction...</Text>
                 </View>
-            </SafeAreaView>
         )
     }
 };
